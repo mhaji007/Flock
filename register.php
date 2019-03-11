@@ -35,6 +35,7 @@ if(isset($_POST['register_button'])) {
 	// Capitalizes only the first letter
 	$fname = ucfirst(strtolower($fname));
 
+
 		/// Last name ///
 
 	$lname = strip_tags($_POST['reg_lname']);
@@ -75,7 +76,18 @@ if(isset($_POST['register_button'])) {
 	$date = date ("Y-m-d"); 
 
 
-
+	if($em == $em2) {
+	// Check if email is in valid format
+		if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
+			$em = filter_var($em, FILTER_VALIDATE_EMAIL);
+		}
+		else {
+			echo "Invalid format";
+		}
+	}
+	else {
+		echo "Emails don't match";
+	}
 
 
 
