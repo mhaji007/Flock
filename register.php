@@ -83,6 +83,10 @@ if(isset($_POST['register_button'])) {
 
 			// Check if email already exists
 			$e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'");
+
+			// Checking the error
+			// echo "Error: " . mysqli_error($con)
+
 			// Count number of rows returned
 			$num_rows = mysqli_num_rows($e_check);
 
@@ -98,6 +102,20 @@ if(isset($_POST['register_button'])) {
 	else {
 		echo "Emails don't match";
 	}
+
+	if(strlen($fname) > 25 || strlen($fname)<2 ) {
+		echo "Your first name must be between 2 and 25 characters";
+	}
+
+	if(strlen($lname) > 25 || strlen($lname)<2 ) {
+		echo "Your last name must be between 2 and 25 characters";
+	}
+
+	if($password != $password2) {
+		echo "Your passwords do not match";
+	}
+
+	
 
 
 
