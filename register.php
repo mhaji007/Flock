@@ -86,7 +86,7 @@ if(isset($_POST['register_button'])) {
 	if($em == $em2) {
 	// Check if email is in valid format
 		//filter_var(variable) similar to strip_tags but also filter and
-		//sanitizes the variable and strips the script tags
+		//sanitizes the variable as well as stripping the script tags
 		if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
 			$em = filter_var($em, FILTER_VALIDATE_EMAIL);
 
@@ -160,6 +160,16 @@ if(isset($_POST['register_button'])) {
 			$username = $username . "_" . $i;
 			$check_username_query = mysqli_query($con,"SELECT username FROM users WHERE username ='$username'");
 		}
+
+		//Profile picture assignment
+
+		// random number between 1 and 2
+		$rand = rand(1,2);
+		
+		if($rand==1)
+			$profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+		else if($rand == 2)
+			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
 
 	}
 
