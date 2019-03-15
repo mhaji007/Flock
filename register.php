@@ -171,6 +171,9 @@ if(isset($_POST['register_button'])) {
 		else if($rand == 2)
 			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
 
+		$query = mysqli_query($con, "INSERT INTO users VALUES ('','$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic','0','0','no',',')");
+
+
 	}
 
 
@@ -198,7 +201,7 @@ if(isset($_POST['register_button'])) {
 
 		<?php if(in_array("Your first name must be between 2 and 25 characters<br>", $error_array)) echo "Your first name must be between 2 and 25 characters<br>"; ?>
 
-		<input type="text" name="reg_lname" placeholder="Last Name" value=" <?php
+		<input type="text" name="reg_lname" placeholder="Last Name" value="<?php
 		if(isset($_SESSION['reg_lname'])) {
 			echo $_SESSION['reg_lname'];
 		} ?>"required>
