@@ -9,13 +9,13 @@ if(isset($_POST['login_button'])) {
 	$_SESSION['log_email'] = $email;
 
 	// Get password
-	$passowrd = md5($_POST['log_password']);
+	$password = md5($_POST['log_password']);
 
-	$check_database_query = mysqli($con, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
-	$check_login_query = mysqli_num_rows($check_databasee_query);
+	$check_database_query = mysqli_query($con, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+	$check_login_query = mysqli_num_rows($check_database_query);
 
 	if($check_login_query == 1) {
-
+		echo "$check_login_query";
 		// Store the result of the query in row variable in array format
 		$row = mysqli_fetch_array($check_database_query);
 
