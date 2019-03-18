@@ -11,18 +11,18 @@ $password2 = ""; //password 2
 $date = ""; //Sign up date
 $error_array=array(); //Holds error messages
 
-// if the register button is set start handling the form
+// If the register button is set start handling the form
 if(isset($_POST['register_button'])) {
 
 	// Registration form values
 	// strip_tags is a security measure that takes away html tags that might
-	// add some unwanted code to your website
+	// Add some unwanted code to your website
 
 
 		/// First name ///
 	$fname = strip_tags($_POST['reg_fname']);
 
-	// removes spaces. str_replace(search, replace, subject)
+	// Removes spaces. str_replace(search, replace, subject)
 	$fname = str_replace('', '', $fname);
 
 	// Capitalizes only the first letter
@@ -76,8 +76,8 @@ if(isset($_POST['register_button'])) {
 
 	if($em == $em2) {
 	// Check if email is in valid format
-		//filter_var(variable) similar to strip_tags but also filter and
-		//sanitizes the variable as well as stripping the script tags
+		// filter_var(variable) is similar to strip_tags but also filter and
+		// Sanitizes the variable as well as stripping the script tags
 		if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
 			$em = filter_var($em, FILTER_VALIDATE_EMAIL);
 
@@ -85,7 +85,7 @@ if(isset($_POST['register_button'])) {
 			$e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'");
 
 			// Checking the error
-			// echo "Error: " . mysqli_error($con)
+			//echo "Error: " . mysqli_error($con)
 
 			// Count number of rows returned
 			$num_rows = mysqli_num_rows($e_check);
@@ -135,26 +135,26 @@ if(isset($_POST['register_button'])) {
 
 	if(empty($error_array)) {
 		
-		//Encrypt password before sending to database
+		// Encrypt password before sending to database
 		$password = md5($password);
 
-		//Generate username by concatenating first name and last name
+		// Generate username by concatenating first name and last name
 		$username = strtolower($fname . "_" . $lname);
 
 		$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username ='$username'");
 
 		$i = 0;
 
-		//if username exists add number to the username
+		// If username exists add number to the username
 		while(mysqli_num_rows($check_username_query) != 0) {
 			$i++;
 			$username = $username . "_" . $i;
 			$check_username_query = mysqli_query($con,"SELECT username FROM users WHERE username ='$username'");
 		}
 
-		//Profile picture assignment
+		// Profile picture assignment
 
-		// random number between 1 and 2
+		// Random number between 1 and 2
 		$rand = rand(1,2);
 		
 		if($rand==1)
@@ -166,7 +166,7 @@ if(isset($_POST['register_button'])) {
 
 		array_push($error_array, "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>");
 
-		//Clear session variables
+		// Clear session variables
 		$_SESSION['reg_fname'] ="";
 		$_SESSION['reg_lname'] ="";
 		$_SESSION['reg_email'] ="";
