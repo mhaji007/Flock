@@ -21,6 +21,12 @@ if(isset($_POST['login_button'])) {
 
 		// Access the column related to username
 		$username = $row['username'];
+
+		// If a user had closed their account and try to log in, reopen the account 
+		$user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE email = '$email' AND user_closed = 'yes'");
+		if(mysqli_num_rows($user_closed_query) == 1) {
+			$reopen_account = mysqli_query($con, "UPDATE users SET user_closed = 'no' WHERE email = '$email'");
+		}
 		
 		// As long as this session variable contains the username and is not nill, that means the the user is logged in. everytime we load a page inside our website, we are going to check and see whether the session varaible contains a value. If it doesn;t it means either the user isn't logged in or is trying to accees the page without being logged in and we are going to redirect them to the log in page
 		$_SESSION ['username'] = $username;
