@@ -21,6 +21,11 @@ require 'includes/form_handlers/login_handler.php';
 
 		<div class ="login_box">
 
+			<div class="login_header">
+			<h1>Flock!</h1>
+			Login or sign up below!
+		</div>
+
 			<form action="register.php" method="POST">
 
 				<input type="email" name="log_email" placeholder="Email Address" value="<?php
