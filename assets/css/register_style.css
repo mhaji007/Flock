@@ -16,3 +16,19 @@ body {
 	background-repeat: no-repeat;
 
 }
+
+.login_box {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	top: 7%;
+	width: 35%;
+	background-color: #ffffff;
+	border: 1px solid #EDEDED;
+	border-radius: 7px;
+	padding:5px;
+	opacity: 0.98;
+	 
+
+
+}
