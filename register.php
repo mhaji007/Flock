@@ -43,8 +43,7 @@ require 'includes/form_handlers/login_handler.php';
 
 				<input type="submit" name="login_button" value="Login">
 				
-				<div><br></div>
-
+				
 				<?php  if(in_array("Email or password was incorrect<br>", $error_array)) echo "Email or password was incorrect<br>" ?>
 
 
@@ -101,7 +100,7 @@ require 'includes/form_handlers/login_handler.php';
 				 else if(in_array("Your password can only contain English characters or numbers<br>", $error_array)) echo "Your password can only contain English characters or numbers<br>";
 				 else if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) echo "Your password must be between 5 and 30 characters<br>"; ?>
 
-				<div><br></div>
+				 
 
 				<input type="submit" name="register_button" value="Register">
 

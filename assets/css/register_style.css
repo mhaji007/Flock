@@ -63,3 +63,28 @@ body {
 	/*text-shadow: #000 0.5px 0.5px 0px;*/
 	font-size: 250%;
 }
+
+input[type="submit"] {
+	background-color: #868f95;
+	border: 1px solid #868f95;
+	border-radius: 3px;
+	margin: 5px 0 10px 0;
+	padding:5px 10px 5px 10px;
+	color:#000000;
+	font-family: 'FFF_Tusj', sans-serif;
+	font-size: 100%;
+
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	border: 1px solid #e5e5e5;
+	/*margin-top: 5px;*/
+	width:70%;
+	height:35px;
+	padding-left: 5px;
+
+
+}
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
+border-color: #868f95;
+}
