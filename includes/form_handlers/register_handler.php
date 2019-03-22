@@ -145,6 +145,25 @@ if(isset($_POST['register_button'])) {
 
 		$i = 0;
 
+		/*
+		
+		$temp_username = $username; //Temporary username variable used to find unique username
+	 
+		//If username already exists, add number to end and check again
+		while(mysqli_num_rows($check_username_query) != 0){
+		    $temp_username = $username; //Reset temporary username back to original username
+		    $i++;
+		    $temp_username = $username."_".$i;
+		    $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$temp_username'");
+		}
+		 
+		$username = $temp_username; //$temp_username will now contain the unique username
+
+
+
+		*/
+
+
 		// If username exists add number to the username
 		while(mysqli_num_rows($check_username_query) != 0) {
 			$i++;
