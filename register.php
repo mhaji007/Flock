@@ -19,6 +19,27 @@ require 'includes/form_handlers/login_handler.php';
 
 <body>
 
+	<?php
+
+	// if the register_button is pressed it hides the login form and shows the signin form
+	if(isset($_POST['register_button'])) {
+
+		echo '
+		<script>
+
+		$(document).ready(function() {
+			$("#first").hide();
+			$("#second").show();
+		});
+
+		</script>
+
+
+		';
+	}
+
+	?>
+
 	<div class="wrapper">
 
 		<div class ="login_box">
@@ -93,7 +114,9 @@ require 'includes/form_handlers/login_handler.php';
 
 				<?php if(in_array("Email already in use<br>", $error_array)) echo "Email already in use<br>"; 
 				else if(in_array("Invalid email format<br>", $error_array)) echo "Invalid email format<br>"; 
-				else if(in_array("Emails don't match<br>", $error_array)) echo "Emails don't match<br>"; ?>
+				else if(in_array("Emails don't match<br>", $error_array)) echo "Emails do not match<br>"; ?>
+
+				<div><br></div>
 
 				<input type="password" name="reg_password" placeholder="Password" required>
 
@@ -107,6 +130,8 @@ require 'includes/form_handlers/login_handler.php';
 				<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match<br>";
 				 else if(in_array("Your password can only contain English characters or numbers<br>", $error_array)) echo "Your password can only contain English characters or numbers<br>";
 				 else if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) echo "Your password must be between 5 and 30 characters<br>"; ?>
+
+				 <div><br></div>
 
 				 
 

@@ -34,7 +34,7 @@ a {
 }
 
 .login_box {
-	font-family: 'FFF_Tusj', sans-serif;
+	font-family:  sans-serif;
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
@@ -49,6 +49,13 @@ a {
 
 
 }
+
+
+.login_box .login_header{
+font-family: 'FFF_Tusj';
+
+}
+
 
 .login_header {
 	width: 100%;
