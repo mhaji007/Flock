@@ -18,6 +18,11 @@ body {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+	color:#868f95;
+}
+
 .wrapper {
 	background-image: url("../images/backgrounds/flock.jpg");
 	background-size: cover;
@@ -87,4 +92,12 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
 border-color: #868f95;
+}
+
+.signup, .signin {
+	font-family: sans-serif;
+}
+
+#second {
+	display: none;
 }
