@@ -41,7 +41,7 @@ else { //send them back to the register page
 			<a href="#">
 				<?php echo $user['first_name'] ?>
 			</a>
-			<a href="#"><i class="fas fa-home"></i></a>
+			<a href="index.php"><i class="fas fa-home"></i></a>
 			<a href="#"><i class="fas fa-envelope"></i></a>
 			<a href="#"><i class="fas fa-bell"></i></a>
 			<a href="#"><i class="fas fa-users"></i></i></a>
@@ -53,3 +53,6 @@ else { //send them back to the register page
 
 
 	</div>
+
+	<!-- opening tag for wrapper class. The closing tag will be in the index.php -->
+	<div class="wrapper">
