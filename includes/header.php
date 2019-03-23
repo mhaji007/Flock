@@ -4,6 +4,8 @@ require 'config/config.php';
 
 if (isset($_SESSION['username'])) {
 	$userLoggedIn = $_SESSION['username'];
+	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+	$user = mysqli_fetch_array($user_details_query);
 }
 else { //send them back to the register page
 	header("Location: register.php");
@@ -22,6 +24,7 @@ else { //send them back to the register page
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
 
@@ -33,6 +36,18 @@ else { //send them back to the register page
 			<a href="index.php">Flock!</a>
 
 		</div>
+
+		<nav>
+			<a href="#">
+				<?php echo $user['first_name'] ?>
+			</a>
+			<a href="#"><i class="fas fa-home"></i></a>
+			<a href="#"><i class="fas fa-envelope"></i></a>
+			<a href="#"><i class="fas fa-bell"></i></a>
+			<a href="#"><i class="fas fa-users"></i></i></a>
+			<a href="#"><i class="fas fa-cogs"></i></a>
+
+		</nav>
 		
 
 

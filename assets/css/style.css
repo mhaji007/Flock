@@ -1,10 +1,62 @@
+@font-face {
+	font-family: 'FFF_Tusj';
+	src: url('../fonts/FFF_Tusj.ttf');
+}
+
+body {
+	/*line height is just the amount of space above and below the text.
+	So if you have a line height of 50px, 
+	there is going to be a lot of space above and below each lin*/
+	line-height: 25px;
+}
+
+
+
 .top_bar {
 	width: 100%;
 	/*stop resizing after a certain width*/
 	min-width: 1050px;
 	height: 40px;
 	background-color: #868f95;
-	border-bottom: 0.25em solid #717c86;
+	border-bottom: 0.25em solid #5a6670;;
 	margin: 0 0 10px 0;
 	display: inline-flex;
 }
+
+
+nav {
+	float: right;
+	right: 1px;
+	position: absolute;
+	margin:10px;
+
+}
+
+nav a {
+	position:relative;
+	color: #5a6670;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.logo a {
+	font-family: 'FFF_Tusj', sans-serif;
+	margin-left: 15px;
+	font-size: 150%;
+	position:relative;
+	top:9px;
+	color: #3a3e41;
+}
+
+
+
+a:hover {
+	text-decoration: none;
+
+}
+
+nav a:hover {
+	border-bottom: 1px solid #2f3640;
+	color: #fff;
+}
+
