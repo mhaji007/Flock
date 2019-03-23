@@ -8,6 +8,7 @@ body {
 	So if you have a line height of 50px, 
 	there is going to be a lot of space above and below each lin*/
 	line-height: 25px;
+	background-color: #E6EAE8;
 }
 
 
@@ -21,6 +22,8 @@ body {
 	border-bottom: 0.25em solid #5a6670;;
 	margin: 0 0 10px 0;
 	display: inline-flex;
+	position: fixed;
+	z-index: 10;
 }
 
 
@@ -60,3 +63,29 @@ nav a:hover {
 	color: #fff;
 }
 
+.wrapper {
+	margin: 0 auto;
+	top: 50px;
+	position: relative;
+	padding: 0 10px;
+	width: 75%;
+	min-width: 950px;
+}
+
+.column {
+	background-color: #fff;
+	padding:10px;
+	border: 1px solid #D3D3D3;
+	border-radius: 5px;
+	box-shadow: 2px 2px 1px #D3D3D3;
+	z-index: -1;
+
+
+}
+
+.user_details {
+	width: 250px;
+	float: left;
+	margin-bottom: 20px;
+	
+}
