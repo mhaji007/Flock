@@ -22,6 +22,15 @@ include ("includes/header.php");
 
 	</div>
 
+	<div class="main_column column">
+		<form class="post_form" action="index.php" method="POST">
+			<textarea name="post_text" id="post_text" placeholder="Say something to your flock..."></textarea>
+			<input type="submit" name="post" id="post_button" value="Post">
+
+		</form>
+		
+	</div>
+
 
 
 	<!-- closing tag for the wrapper from header.php -->
