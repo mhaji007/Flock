@@ -1,5 +1,5 @@
 <?php 
-class User {
+class Post {
 	private $user_obj;
 	private $con;
 
@@ -14,8 +14,8 @@ class User {
 		// removes html tags
 		$body = strip_tags($body);
 		// escapes the single quotes
-		$body = mysqli_real_escape_string("$this->con, $body");
-		// delets all spaces
+		$body = mysqli_real_escape_string($this->con, $body);
+		// deletes all spaces
 		$check_empty = preg_replace('/\s+/', '', $body);
 
 		if($check_empty !="") {
@@ -31,6 +31,21 @@ class User {
 				$user_to = "none";
 
 			}
+
+			// insert post
+			$query = mysqli_query($this->con, "INSERT INTO posts VALUES('','$body','added_by','$user_to','date_added','no','no','0')");
+			
+			// returns the id of the post
+			$returned_id = mysqli_insert_id($this->con);
+
+			// insert notification if the user is posting to someone else's profile
+
+
+			// update post count for user
+			$num_posts = $this->user_obj->getNumPosts();
+			$num_posts++;
+			$update_query = mysqli_query($this->con, "UPDATE users SET num_posts='$num_posts' WHERE username='$added_by'"); 
+
 		}
 
 		
