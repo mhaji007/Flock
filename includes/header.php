@@ -46,6 +46,8 @@ else { //send them back to the register page
 			<a href="#"><i class="fas fa-bell"></i></a>
 			<a href="#"><i class="fas fa-users"></i></i></a>
 			<a href="#"><i class="fas fa-cogs"></i></a>
+			<a href="includes/handlers/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+
 
 		</nav>
 		
