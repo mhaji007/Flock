@@ -42,23 +42,23 @@ class Post {
 
 	public function loadPostsFriends() {
 
-		// $page = $data['page']; 
-		// $userLoggedIn = $this->user_obj->getUsername();
+		$page = $data['page']; 
+		$userLoggedIn = $this->user_obj->getUsername();
 
-		// if($page == 1) 
-		// 	$start = 0;
-		// else 
-		// 	$start = ($page - 1) * $limit;
+		if($page == 1) 
+			$start = 0;
+		else 
+			$start = ($page - 1) * $limit;
 
 
 		$str = ""; //String to return 
-		$data = mysqli_query($this->con, "SELECT * FROM posts WHERE deleted='no' ORDER BY id DESC");
+		$data_query = mysqli_query($this->con, "SELECT * FROM posts WHERE deleted='no' ORDER BY id DESC");
 
-		 //if(mysqli_num_rows($data_query) > 0) {
+		 if(mysqli_num_rows($data_query) > 0) {
 
 
-		// 	$num_iterations = 0; //Number of results checked (not necasserily posted)
-		// 	$count = 1;
+			$num_iterations = 0; //Number of results checked (not necasserily posted)
+			$count = 1;
 
 			while($row = mysqli_fetch_array($data_query)) {
 				$id = $row['id'];

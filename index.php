@@ -93,8 +93,11 @@ if(isset($_POST['post'])){
 
 
 
-			}
-		});
+			} // End if
+
+			return false;
+
+		}); // End (window).scroll(function())
 	}):
 	</script>
 
