@@ -40,7 +40,7 @@ class Post {
 		}
 	}
 
-	public function loadPostsFriends() {
+	public function loadPostsFriends($data, $limit) {
 
 		$page = $data['page']; 
 		$userLoggedIn = $this->user_obj->getUsername();
@@ -54,7 +54,7 @@ class Post {
 		$str = ""; //String to return 
 		$data_query = mysqli_query($this->con, "SELECT * FROM posts WHERE deleted='no' ORDER BY id DESC");
 
-		 if(mysqli_num_rows($data_query) > 0) {
+		if(mysqli_num_rows($data_query) > 0) {
 
 
 			$num_iterations = 0; //Number of results checked (not necasserily posted)
@@ -191,7 +191,7 @@ class Post {
 							<input type='hidden' class='noMorePosts' value='false'>";
 			else 
 				$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
-		//}
+		}
 
 		echo $str;
 
